@@ -233,6 +233,14 @@
     .sol-name {
       font-family:var(--hf); font-size:20px; font-weight:800;
       color:#fff; letter-spacing:1px; margin-bottom:10px;
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    }
+    .patent-badge {
+      font-family:var(--bf); font-size:10px; font-weight:600;
+      letter-spacing:1.5px; text-transform:uppercase;
+      color:#ff4444; border:1px solid rgba(255,68,68,.4);
+      padding:3px 9px; border-radius:2px;
+      white-space:nowrap; vertical-align:middle;
     }
     .sol-desc { font-size:14px; color:var(--muted); line-height:1.65; }
 
@@ -269,7 +277,7 @@
       border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.06);
       box-shadow:0 0 32px rgba(255,255,255,.08);
     }
-    .proc-n { font-family:var(--hf); font-size:22px; font-weight:800; color:#fff; }
+    .proc-n { font-family:var(--hf); font-size:22px; font-weight:800; color:#fff; font-variant-numeric: lining-nums tabular-nums; }
     .proc-title {
       font-family:var(--hf); font-size:13px; font-weight:700;
       letter-spacing:2px; text-transform:uppercase; color:var(--text); margin-bottom:10px;
@@ -440,7 +448,7 @@
     <div class="sol-card">
       <div class="sol-preview"><span class="sol-ph">Preview Coming</span></div>
       <div class="sol-info">
-        <div class="sol-name">TAPAK</div>
+        <div class="sol-name">JEJAK <span class="patent-badge">Patent Pending</span></div>
         <div class="sol-desc">Geospatial site management and infrastructure mapping platform for network planning and asset tracking.</div>
       </div>
     </div>
@@ -461,7 +469,7 @@
     <div class="sol-card">
       <div class="sol-preview"><span class="sol-ph">Preview Coming</span></div>
       <div class="sol-info">
-        <div class="sol-name">Fraud Intelligence</div>
+        <div class="sol-name">AMAN</div>
         <div class="sol-desc">AI-powered fraud detection and geospatial analytics platform for identifying anomalies across large datasets.</div>
       </div>
     </div>

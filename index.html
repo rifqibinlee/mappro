@@ -677,16 +677,19 @@
   const hamburger = document.getElementById('hamburger');
 
   function checkNavFit() {
-    // Temporarily un-collapse so we can measure natural widths
+    // Clear any inline styles and remove collapsed state so we can measure natural widths
     nav.classList.remove('nav-collapsed');
-    navLinks.style.display = 'flex';
-    navCta.style.display   = 'block';
+    navLinks.style.display = '';
+    navCta.style.display   = '';
 
-    const GAP = 80; // minimum breathing room between logo and links (px)
-    const logoRight  = navLogo.getBoundingClientRect().right;
-    const linksLeft  = navLinks.getBoundingClientRect().left;
-    const ctaRight   = navCta.getBoundingClientRect().right;
-    const navRight   = nav.getBoundingClientRect().right - 64; // account for padding
+    // Force reflow so getBoundingClientRect reflects the uncollapsed state
+    nav.getBoundingClientRect();
+
+    const GAP       = 80; // minimum gap between logo right edge and links left edge
+    const logoRight = navLogo.getBoundingClientRect().right;
+    const linksLeft = navLinks.getBoundingClientRect().left;
+    const ctaRight  = navCta.getBoundingClientRect().right;
+    const navRight  = nav.getBoundingClientRect().right - 64;
 
     const tooTight = (linksLeft - logoRight) < GAP || ctaRight > navRight;
 
